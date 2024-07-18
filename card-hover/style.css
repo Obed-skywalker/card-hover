@@ -1,0 +1,71 @@
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0; margin: 0;
+  text-decoration: none;
+  border: none; outline: none;
+
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 70%;
+  overflow-x: hidden;
+}
+.card{
+  width: 500px;
+  height: 350px;
+  aspect-ratio: 1/ 0.7;
+  border-radius: 10px;
+  position: relative;
+  background-color: rgb(134, 134, 144);
+  align-items: center;
+  
+}
+#jedi{
+    width: 500px;
+    height: 350px;
+
+}
+.card .imagbox img{  
+object-fit: cover;
+object-position: 50% 90%;
+border-radius: 15px;
+transition: .4s ease-in-out;
+}
+.card .content h2,
+.card .content p{
+    color: #ffffff;
+    opacity: 0;
+}
+.card::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    border: 2px solid #ffffff;
+    transition: .4s ease-in-out;
+  }
+  .card:hover img{
+    filter: brightness(.4)
+            grayscale(1);
+  }
+  .card:hover::after{
+    opacity: 1;
+    inset: 20px;
+  }
+  .card:hover .content h2 {
+    scale: 1;
+    opacity: 1;
+  }
+  .card:hover .content p {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .content{
+    width: 80%;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
